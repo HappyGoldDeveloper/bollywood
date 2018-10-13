@@ -1,3 +1,3 @@
 class Image < ApplicationRecord
-    has_one: movie
+    has_one :movie
 end
