@@ -1,7 +1,40 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
+require 'faker'
+
+
+file = File.read "/Users/arshdeepsinghsangha/RailsProject/Bollywood/Bollywood/movies.json"
+data_set = JSON.parse(file)
+
+
+
+MovieActor.delete_all
+MovieGenre.delete_all
+Actor.delete_all
+Genre.delete_all
+Movie.delete_all
+Image.delete_all
+
+
+data_set.each do |data|
+
+    image_data = Image.create(name: data["posterurl"])
+
+
+    movie_made = Movie.create(title: data["title"],year: data["year"],release_date: data["releaseDate"],imdb: data["imdbRating"],story_line: data["storyline"] , image: image_data)
+
+    data["actors"].each do |a|
+
+        actor_made = Actor.find_or_create_by(name: a) 
+
+        MovieActor.create(actor: actor_made , movie: movie_made)
+    end
+
+    data["genres"].each do |g|
+
+        genre_made = Genre.find_or_create_by(name: g)
+
+        MovieGenre.create(genre: genre_made , movie: movie_made)
+
+    end
+
+end
