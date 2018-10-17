@@ -1,2 +1,33 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<h1>Bollywood Movies</h1>
+<%# <p>Find me in app/views/movies/index.html.erb</p> %>
+
+<table>
+<tr>
+    <th>Poster</th>
+    <th>Movie</th>
+    <th>Release Date</th>
+    <th>Year</th>
+    <th>Imdb Rating</th>
+</tr>
+<% bollywood_movies = @movies %>
+<% bollywood_movies.each do |movie| %>
+
+<% image_movie = movie.image.name %>
+
+<tr>
+    <% if image_movie == "404 Not Found" %>
+      <td><img src="https://vignette.wikia.nocookie.net/mixels/images/f/f4/No-image-found.jpg/revision/latest?cb=20150916222215" alt="Poster " height="100" width="100"></td>
+    <% else %>
+        <td><img src="<%=image_movie%>" alt="<%= movie.title %> Poster " height="100" width="100"></td>
+    <% end %>
+    
+    <td><%= movie.title %></td>
+    <td><%= movie.release_date%></td>
+    <td><%= movie.year%></td>
+    <td><%= movie.imdb%></td>
+</tr>
+
+
+<% end %>
+
+<table>
