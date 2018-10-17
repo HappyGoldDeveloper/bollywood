@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'actors/index'
+  get 'actors/show'
   get 'home' => 'home#index'
   root to: 'home#index'
   get 'about' => 'about#index'
