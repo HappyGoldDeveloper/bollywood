@@ -1,2 +1,36 @@
-<h1>About#index</h1>
-<p>Find me in app/views/about/index.html.erb</p>
+<h1>About</h1>
+<p>This a Introduction to Rails Project.</p>
+<p>The data used in this project was obtained from a repository on Github <a href="https://github.com/FEND16/movie-json-data/tree/master/json">project.</a> </p>
+<p>The two files, top-rated-indian-movies-01.json and top-rated-indian-movies-02.json on this website were then stored locally.  </p>
+<p>The were comibined and used for this project</p>
+
+<p>In total , there are 6 tables for this project</p>
+<ul>
+    <li>
+        <p>Movie Table</p>
+        <p>This table has the movie title,year,imbd rating,release date,story line, Image_id as the foreign key</p>
+    </li>
+    <li>
+        <p>Actor Table</p>
+        <p>This table has the actor name.</p>
+    </li>
+    <li>
+        <p>Image Table</p>
+        <p>This table has the image link.</p>
+    </li>
+    <li>
+        <p>Genre Table</p>
+        <p>This table has the genres for all the movies</p>
+    </li>
+    <li>
+        <p>MovieActor Table</p>
+        <p>This table supports the many to many relationship between Movie table and Actor table.</p>
+    </li>
+    <li>
+        <p>MovieGenre Table</p>
+        <p>This table supports the many to many relationship between Movie table and Genre table.</p>
+    </li>
+</ul>
+
+<p>Following is the erd of the database.</p>
+<img src="/assets/erd.png" alt="Database">
