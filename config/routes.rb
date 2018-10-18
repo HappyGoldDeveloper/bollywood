@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'directors/index'
-  get 'directors/show'
+  # get 'directors/index'
+  # get 'directors/show'
+  resources :directors ,only:[:index, :show]
   # get 'genres' => 'genres#index'
   # get 'genres/show'
   resources :genres, only:[:index, :show]

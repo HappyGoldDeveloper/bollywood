@@ -1,2 +1,35 @@
-<h1>Directors#index</h1>
-<p>Find me in app/views/directors/index.html.erb</p>
+<h1>Directors</h1>
+<ul>
+  <li><a href="http://localhost:3000/home">Home</a></li>
+  <li><a href="http://localhost:3000/about">About</a></li>
+  <li><a href="http://localhost:3000/movies">Movies</a></li>
+  <li><a href="http://localhost:3000/actors">Actors</a></li>
+  <li><a href="http://localhost:3000/genres">Genres</a></li>
+  <li><a href="http://localhost:3000/directors">Directors</a></li>
+</ul>
+<%= paginate @directors%>
+<% director_data = @directors %>
+<table>
+<thead>
+<tr>
+    <th>
+        Director Name
+    </th>
+    <th>
+        Link
+    </th>
+</tr>
+</thead>
+<tbody>
+<% director_data.each do |each_director| %>
+
+<tr>
+    <td><%= each_director.name %></td>
+    <td><%= link_to "See movie", each_director %>
+</tr>
+
+<% end %>
+<% %>
+<% %>
+</tbody>
+</table>
