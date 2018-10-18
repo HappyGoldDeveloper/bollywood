@@ -8,14 +8,15 @@
 </ul>
 <p>This a Introduction to Rails Project.</p>
 <p>The data used in this project was obtained from a repository on Github <a href="https://github.com/FEND16/movie-json-data/tree/master/json">project.</a> </p>
+<p>The second data source used is the <a href="https://github.com/stympy/faker">Faker.</a></p>
 <p>The two files, top-rated-indian-movies-01.json and top-rated-indian-movies-02.json on this website were then stored locally.  </p>
 <p>The were comibined and used for this project</p>
 
-<p>In total , there are 6 tables for this project</p>
+<p>In total , there are 7 tables for this project</p>
 <ul>
     <li>
         <p>Movie Table</p>
-        <p>This table has the movie title,year,imbd rating,release date,story line, Image_id as the foreign key</p>
+        <p>This table has the movie title,year,imbd rating,release date,story line, Image_id as the foreign key.</p>
     </li>
     <li>
         <p>Actor Table</p>
@@ -26,8 +27,12 @@
         <p>This table has the image link.</p>
     </li>
     <li>
+        <p>Director Table</p>
+        <p>This table has a one to many relationship with Movies table.</p>
+    </li>
+    <li>
         <p>Genre Table</p>
-        <p>This table has the genres for all the movies</p>
+        <p>This table has the genres for all the movies.</p>
     </li>
     <li>
         <p>MovieActor Table</p>
@@ -40,4 +45,4 @@
 </ul>
 
 <p>Following is the erd of the database.</p>
-<img src="/assets/erd.png" alt="Database">
+<img src="/assets/erdmodel.jpg" alt="Database" height="500" width="700">

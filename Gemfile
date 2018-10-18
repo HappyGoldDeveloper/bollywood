@@ -50,6 +50,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'kaminari'
   gem 'faker'
+  gem 'rails-erd'
 end
 
 group :test do
