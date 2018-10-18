@@ -1,2 +1,24 @@
-<h1>Actors#index</h1>
-<p>Find me in app/views/actors/index.html.erb</p>
+<h1>Actors</h1>
+<ul>
+  <li><a href="http://localhost:3000/home">Home</a></li>
+  <li><a href="http://localhost:3000/about">About</a></li>
+  <li><a href="http://localhost:3000/movies">Movies</a></li>
+  <li><a href="http://localhost:3000/actors">Actors</a></li>
+</ul>
+<% all_actors = @actors%>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Movies</th>
+</tr>
+<% all_actors.each do |actor| %>
+  
+    <tr>
+        <td><%=actor.name%></td>
+        <td><%=actor.movies.count%>
+    </tr>
+
+<% end %>
+
+</table>
