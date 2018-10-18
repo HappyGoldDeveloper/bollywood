@@ -2,5 +2,17 @@
 <%# <p>Find me in app/views/movies/show.html.erb</p> %>
 <% movie = @movie%>
 
-<p><%=movie.title%></p>
-<p><%=movie.year%></p>
+<p><img src="<%=movie.image.name%>" alt="<%= movie.title %> Poster " height="300" width="200"></p>
+<p><b>Movie Name: </b><%=movie.title%></p>
+<p><b>Year: </b><%=movie.year%></p>
+<p><b>Plot: </b><%=movie.story_line%></p>
+<p><b>Release Date: </b><%=movie.release_date%></p>
+<p><b>Imdb Rating: </b><%=movie.imdb%></p>
+<p><b>Actors: </b></p>
+<% movie.actors.each do |actor_name| %>
+<p><%= actor_name.name%><p>
+<%end%>
+<p><b>Genres: </b></p>
+<% movie.genres.each do |genre_name|%>
+<p><%= genre_name.name%></p>
+<%end%>
