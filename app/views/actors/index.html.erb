@@ -12,12 +12,14 @@
 <tr>
 <th>Name</th>
 <th>Movies</th>
+<th>Link</th>
 </tr>
 <% all_actors.each do |actor| %>
   
     <tr>
         <td><%=actor.name%></td>
         <td><%=actor.movies.count%>
+        <td><%=link_to "See Actor" , actor%></td>
     </tr>
 
 <% end %>
