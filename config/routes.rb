@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'genres/index'
+  get 'genres/show'
   get 'actors'=> 'actors#index'
   get 'actors/show'
   get 'home' => 'home#index'
