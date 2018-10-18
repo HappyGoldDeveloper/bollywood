@@ -9,8 +9,9 @@
 
 <h1>Genres</h1>
 
-<% movie_genres = @genres %>
 
+<%= paginate @genres%>
+<% movie_genres = @genres %>
 <table>
 <tr>
     <th>Name</th>

@@ -19,7 +19,7 @@
 <p><b>Imdb Rating: </b><%=movie.imdb%></p>
 <p><b>Actors: </b></p>
 <% movie.actors.each do |actor_name| %>
-<p><%= actor_name.name%><p>
+<p><%= link_to actor_name.name, actor_name%><p>
 <%end%>
 <p><b>Genres: </b></p>
 <% movie.genres.each do |genre_name|%>

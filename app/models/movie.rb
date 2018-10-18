@@ -7,4 +7,6 @@ class Movie < ApplicationRecord
 
   validates :title , presence: true
   validates :year ,  numericality: { only_integer: true }
+
+  paginates_per 10
 end

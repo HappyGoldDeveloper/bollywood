@@ -6,12 +6,14 @@
   <li><a href="http://localhost:3000/actors">Actors</a></li>
   <li><a href="http://localhost:3000/genres">Genres</a></li>
 </ul>
+
+<%= paginate @actors%>
 <% all_actors = @actors%>
 
 <table>
 <tr>
 <th>Name</th>
-<th>Movies</th>
+<th>Movies Acted in</th>
 <th>Link</th>
 </tr>
 <% all_actors.each do |actor| %>
@@ -19,7 +21,11 @@
     <tr>
         <td><%=actor.name%></td>
         <td><%=actor.movies.count%>
-        <td><%=link_to "See Actor" , actor%></td>
+        <% if actor.movies.count == 1 %>
+          <td><%=link_to "See Actor Movie" , actor%></td>
+          <% else %>
+          <td><%=link_to "See Actor Movies" , actor%></td>
+        <% end %>
     </tr>
 
 <% end %>
