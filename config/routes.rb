@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'genres' => 'genres#index'
-  get 'genres/show'
-  # get 'actors'=> 'actors#index'
-  # get 'actors/:id' => 'actors#show'
+  # get 'genres' => 'genres#index'
+  # get 'genres/show'
+  resources :genres, only:[:index, :show]
   get 'home' => 'home#index'
   root to: 'home#index'
   get 'about' => 'about#index'

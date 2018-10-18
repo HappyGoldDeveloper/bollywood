@@ -1,10 +1,30 @@
-<h1>Actor</h1>
+  <li><a href="http://localhost:3000/home">Home</a></li>
+  <li><a href="http://localhost:3000/about">About</a></li>
+  <li><a href="http://localhost:3000/movies">Movies</a></li>
+  <li><a href="http://localhost:3000/actors">Actors</a></li>
+  <li><a href="http://localhost:3000/genres">Genres</a></li>
 
 <% actor_info = @actor%>
-<p>Name: <%= actor_info.name%></p>
-
-<p>Movies:</p>
-<% actor_info.movies.each do |movie| %>
-    <p><%= movie.title%></p>
-    <p><%= link_to "See movie" , movie%></p>
+<% if actor_info.movies.count ==  1%>
+    <h1><%= actor_info.name%>'s Movie</h1>
+<%  else %>
+    <h1><%= actor_info.name%>'s Movies</h1>
 <% end %>
+
+<table>
+<tr>
+    <th>Image</th>
+    <th>Movie Name</th>
+    <th>Link</th>
+</tr>
+
+<% actor_info.movies.each do |movie| %>
+<tr>
+    <td><img src="<%=movie.image.name%>" alt="<%= movie.title %> Poster " height="100" width="100"></td>
+    <td><p><%= movie.title%></p></td>
+    <td><p><%= link_to "See movie details" , movie%></p></td>
+</tr>
+<% end %>
+
+
+</table>
