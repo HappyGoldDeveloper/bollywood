@@ -4,9 +4,11 @@ class Movie < ApplicationRecord
   has_many :actors , through: :movie_actors
   has_many :movie_genres
   has_many :genres , through: :movie_genres
+  belongs_to :director
 
   validates :title , presence: true
   validates :year ,  numericality: { only_integer: true }
+
 
   paginates_per 10
 end

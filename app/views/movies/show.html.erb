@@ -17,6 +17,7 @@
 <p><b>Plot: </b><%=movie.story_line%></p>
 <p><b>Release Date: </b><%=movie.release_date%></p>
 <p><b>Imdb Rating: </b><%=movie.imdb%></p>
+<p><b>Movie Director: </b><%=movie.director.name%></p>
 <p><b>Actors: </b></p>
 <% movie.actors.each do |actor_name| %>
 <p><%= link_to actor_name.name, actor_name%><p>

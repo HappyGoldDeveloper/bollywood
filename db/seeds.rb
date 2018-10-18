@@ -1,4 +1,5 @@
 require 'json'
+require 'faker'
 
 
 file = File.read "/Users/arshdeepsinghsangha/RailsProject/Bollywood/movies.json"
@@ -12,14 +13,16 @@ Actor.delete_all
 Genre.delete_all
 Movie.delete_all
 Image.delete_all
+Director.delete_all
 
 
 data_set.each do |data|
 
     image_data = Image.create(name: data["posterurl"])
 
+    director_data = Director.find_or_create_by(name: Faker::Name.name)
 
-    movie_made = Movie.create(title: data["title"],year: data["year"],release_date: data["releaseDate"],imdb: data["imdbRating"],story_line: data["storyline"] , image: image_data)
+    movie_made = Movie.create(title: data["title"],year: data["year"],release_date: data["releaseDate"],imdb: data["imdbRating"],story_line: data["storyline"] , image: image_data , director: director_data)
 
     data["actors"].each do |a|
 
