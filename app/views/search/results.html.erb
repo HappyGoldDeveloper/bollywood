@@ -1,0 +1,42 @@
+<ul>
+  <li><a href="http://localhost:3000/home">Home</a></li>
+  <li><a href="http://localhost:3000/about">About</a></li>
+  <li><a href="http://localhost:3000/movies">Movies</a></li>
+  <li><a href="http://localhost:3000/actors">Actors</a></li>
+  <li><a href="http://localhost:3000/genres">Genres</a></li>
+  <li><a href="http://localhost:3000/directors">Directors</a></li>
+  <li><a href="http://localhost:3000/search">Search</a></li>
+</ul>
+
+<% if @movies.empty? %>
+  <h1>No movie found.</h1>
+<% elsif @movies.size == 1 %>
+  <h1><%= @movies.size %> Movie Found. </h1>
+  <% else %>
+  <h1><%= @movies.size %> Movies Found. </h1>
+<% end %>
+
+<% if @movies.empty? %>
+    <p>No Results to show.</p>
+<% else %>
+
+<table>
+<tr>
+    <th>Image</th>
+    <th>Movie</th>
+</tr>
+
+<% @movies.each do |movie| %>
+<tr>
+    <td>
+        <img src="<%=movie.image.name%>" alt="<%= movie.title %> Poster " height="100" width="100">
+    </td>
+    <td>
+        <p>
+            <%= link_to movie.title , movie %>
+        </p>
+    <td>
+<tr>
+<% end %>
+</table>
+<% end %>

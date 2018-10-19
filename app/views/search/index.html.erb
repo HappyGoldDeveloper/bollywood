@@ -1,5 +1,4 @@
-<h1>Bollywood</h1>
-
+<h1>Search</h1>
 <ul>
   <li><a href="http://localhost:3000/home">Home</a></li>
   <li><a href="http://localhost:3000/about">About</a></li>
@@ -10,4 +9,8 @@
   <li><a href="http://localhost:3000/search">Search</a></li>
 </ul>
 
-<p>Homepage</p>
+<%= form_tag(results_search_index_path, method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
