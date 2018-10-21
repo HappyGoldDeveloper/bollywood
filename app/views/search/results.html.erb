@@ -7,7 +7,7 @@
   <li><a href="http://localhost:3000/directors">Directors</a></li>
   <li><a href="http://localhost:3000/search">Search</a></li>
 </ul> %>
-
+<div>
 <% if @movies.empty? %>
   <h1>No movie found.</h1>
 <% elsif @movies.size == 1 %>
@@ -20,6 +20,8 @@
     <p>No Results to show.</p>
 <% else %>
 
+<%= paginate @movies%>
+</div>
 <table>
 <tr>
     <th>Image</th>
@@ -29,7 +31,7 @@
 <% @movies.each do |movie| %>
 <tr>
     <td>
-        <img src="<%=movie.image.name%>" alt="<%= movie.title %> Poster " height="100" width="100">
+        <img src="<%=movie.image.name%>" alt="<%= movie.title %> Poster " onerror="this.src='/assets/not_found.png'" height="100" width="100">
     </td>
     <td>
         <p>

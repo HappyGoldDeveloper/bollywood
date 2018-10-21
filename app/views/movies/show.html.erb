@@ -10,17 +10,27 @@
 
 
 <h1>Movie Details</h1>
-<%# <p>Find me in app/views/movies/show.html.erb</p> %>
-<% movie = @movie%>
 
-<p><img src="<%=movie.image.name%>" alt="<%= movie.title %> Poster " height="300" width="200"></p>
+<% movie = @movie%>
+<% movie_image = movie.image.name%>
+
+<p><img src="<%=movie_image%>" alt="<%= movie.title %>" onerror="this.src='/assets/sorry.png'" height="300" width="200"></p>
 <p><b>Movie Name: </b><%=movie.title%></p>
 <p><b>Year: </b><%=movie.year%></p>
-<p><b>Plot: </b><%=movie.story_line%></p>
+
+<% plot = movie.story_line %>
+<% if plot.include? "Written" %>
+  <% new_plot = plot.slice(0..(plot.index('Written'))) %>
+  <p><b>Plot: </b><%= new_plot.remove("W")%></p>
+<% else %>
+  <p><b>Plot: </b><%= plot%></p>
+<% end %>
+
 <p><b>Release Date: </b><%=movie.release_date%></p>
 <p><b>Imdb Rating: </b><%=movie.imdb%></p>
 <p><b>Movie Director: </b><%=movie.director.name%></p>
 <p><b>Actors: </b></p>
+
 <% movie.actors.each do |actor_name| %>
 <p><%= link_to actor_name.name, actor_name%><p>
 <%end%>

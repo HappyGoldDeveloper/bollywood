@@ -27,7 +27,7 @@
 <% director.movies.each do |movie| %>
 
 <tr>
-    <td><img src="<%=movie.image.name%>" alt="<%= movie.title %> Poster " height="100" width="100"></td>
+    <td><img src="<%=movie.image.name%>" alt="<%= movie.title %> Poster " onerror="this.src='/assets/not_found.png'" height="100" width="100"></td>
     <td><p><%= movie.title%></p></td>
     <td><%= link_to "See movie" , movie%></td>
 

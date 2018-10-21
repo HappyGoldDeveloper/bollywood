@@ -1,15 +1,8 @@
-<h1>Bollywood Movies</h1>
-<%# <ul>
-  <li><a href="http://localhost:3000/home">Home</a></li>
-  <li><a href="http://localhost:3000/about">About</a></li>
-  <li><a href="http://localhost:3000/movies">Movies</a></li>
-  <li><a href="http://localhost:3000/actors">Actors</a></li>
-  <li><a href="http://localhost:3000/genres">Genres</a></li>
-  <li><a href="http://localhost:3000/directors">Directors</a></li>
-  <li><a href="http://localhost:3000/search">Search</a></li>
-</ul> %>
 
+<div>
+<h1>Bollywood Movies</h1>
 <%= paginate @movies%>
+</div>
 <table>
 <tr>
     <th>Poster</th>
@@ -25,7 +18,7 @@
 <% image_movie = movie.image.name %>
 
 <tr>
-    <td><img src="<%=image_movie%>" alt="<%= movie.title %> Poster " height="100" width="100"></td>
+    <td><img src="<%=image_movie%>" alt="<%= movie.title %> Poster " onerror="this.src='/assets/not_found.png'" height="100" width="100"></td>
     <td><%= movie.title%></td>
     <td><%= movie.release_date%></td>
     <td><%= movie.year%></td>

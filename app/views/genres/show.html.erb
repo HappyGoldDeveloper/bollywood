@@ -27,7 +27,7 @@
 <% genre_details.movies.each do |genre| %>
 
 <tr>
-    <td><img src="<%=genre.image.name%>" alt="<%= genre.title %> Poster " height="100" width="100"></td>
+    <td><img src="<%=genre.image.name%>" alt="<%= genre.title %> Poster " onerror="this.src='/assets/not_found.png'" height="100" width="100"></td>
     <td><p><%= genre.title%></p></td>
     <td><%= link_to "See movie" , genre%></td>
 
