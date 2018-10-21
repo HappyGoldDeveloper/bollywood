@@ -1,19 +1,9 @@
-<ul>
-  <li><a href="http://localhost:3000/home">Home</a></li>
-  <li><a href="http://localhost:3000/about">About</a></li>
-  <li><a href="http://localhost:3000/movies">Movies</a></li>
-  <li><a href="http://localhost:3000/actors">Actors</a></li>
-  <li><a href="http://localhost:3000/genres">Genres</a></li>
-  <li><a href="http://localhost:3000/directors">Directors</a></li>
-  <li><a href="http://localhost:3000/search">Search</a></li>
-</ul>
-
-
-<h1>Movie Details</h1>
 
 <% movie = @movie%>
 <% movie_image = movie.image.name%>
 
+<div>
+<h1>Movie Details</h1>
 <p><img src="<%=movie_image%>" alt="<%= movie.title %>" onerror="this.src='/assets/sorry.png'" height="300" width="200"></p>
 <p><b>Movie Name: </b><%=movie.title%></p>
 <p><b>Year: </b><%=movie.year%></p>
@@ -21,9 +11,9 @@
 <% plot = movie.story_line %>
 <% if plot.include? "Written" %>
   <% new_plot = plot.slice(0..(plot.index('Written'))) %>
-  <p><b>Plot: </b><%= new_plot.remove("W")%></p>
+  <p class = "story"><b>Story Line: </b><%= new_plot.remove("W")%></p>
 <% else %>
-  <p><b>Plot: </b><%= plot%></p>
+  <p class = "story"><b>Story Line: </b><%= plot%></p>
 <% end %>
 
 <p><b>Release Date: </b><%=movie.release_date%></p>
@@ -38,3 +28,4 @@
 <% movie.genres.each do |genre_name|%>
 <p><%= genre_name.name%></p>
 <%end%>
+</div>
