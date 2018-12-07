@@ -2,7 +2,8 @@ require 'json'
 require 'faker'
 
 
-file = File.read "/Users/arshdeepsinghsangha/RailsProject/Bollywood/movies.json"
+file = File.read "movies.json"
+#file = File.read "/Users/arshdeepsinghsangha/RailsProject/Bollywood/movies.json"
 data_set = JSON.parse(file)
 
 
